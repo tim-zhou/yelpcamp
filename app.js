@@ -19,7 +19,14 @@ const commentRoutes = require("./routes/comments"),
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect("mongodb+srv://dbUser:0g3H0mkxbjihKtmk@cluster0.yhsjk.mongodb.net/yelp_camp?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://dbUser:0g3H0mkxbjihKtmk@cluster0.yhsjk.mongodb.net/yelp_camp?retryWrites=true&w=majority", {
+	useNewUrlParser: true,
+	useCreateIndex: true,
+}).then(() => {
+	console.log('Connected to DB');
+}).catch(err => {
+	 console.log('ERROR', err.message);
+});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", 'ejs');
