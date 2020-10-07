@@ -19,7 +19,7 @@ const commentRoutes = require("./routes/comments"),
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb+srv://dbUser:dbUserpw123.@cluster0.yhsjk.mongodb.net/yelp_camp?retryWrites=true&w=majority");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", 'ejs');
