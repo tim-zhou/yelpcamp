@@ -1,6 +1,5 @@
 const express = require("express"),
 	 app = express(),
-	 serverless = require('serverless-http');
 	 bodyParser = require("body-parser"),
 	 mongoose = require("mongoose"),
 	  flash = require("connect-flash"),
